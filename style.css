@@ -1,0 +1,157 @@
+:root {
+  --bg-color: #080711;
+  --card-bg: #110e21;
+  --neon-cyan: #00f3ff;
+  --neon-magenta: #ff007f;
+  --text-color: #e2e8f0;
+  --text-dim: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header com Animação Neon */
+.header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.logo-neon {
+  font-size: 3rem;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  animation: pulso-neon 2s infinite alternate;
+}
+
+.logo-neon .destaque {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 10px var(--neon-magenta), 0 0 20px var(--neon-magenta), 0 0 40px var(--neon-magenta);
+}
+
+.subtitulo {
+  color: var(--text-dim);
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* Container do Post */
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.post {
+  background-color: var(--card-bg);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+}
+
+.titulo-post {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.data-post {
+  color: var(--neon-magenta);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.conteudo-post p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+/* Área de Likes e Botão */
+.area-likes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-neon {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.btn-neon:hover {
+  background: var(--neon-cyan);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.btn-neon:active {
+  transform: scale(0.95);
+}
+
+.contador-texto {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Animação do Contador quando aumenta */
+.animar-contador {
+  animation: pulso-numero 0.3s ease;
+}
+
+/* Keyframes de Animação */
+@keyframes pulso-neon {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--neon-cyan));
+  }
+}
+
+@keyframes pulso-numero {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+    color: var(--neon-magenta);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
